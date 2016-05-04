@@ -128,6 +128,7 @@
     <Content Include="Web Stuff\AdminViewsStudent.html" />
     <Content Include="Web Stuff\AdminViewsStudentStyle.txt" />
     <Content Include="Web Stuff\AdminViewStudentStyle.css" />
+    <Content Include="Web Stuff\TeacherMain.html" />
     <Content Include="Web Stuff\Login.html" />
     <Content Include="Web Stuff\AdminSearchCourse.html" />
     <Content Include="Web Stuff\AdminSearchStyle.css" />
