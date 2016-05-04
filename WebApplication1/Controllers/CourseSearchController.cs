@@ -13,5 +13,15 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
+
+        public string CourseSearch(string id)
+        {
+            return WebApplication1.globals.Global.data.search_for_courses(id);
+        }
+
+        public string UserSearch(string id)
+        {
+            return WebApplication1.globals.Global.data.search_for_courses(id);
+        }
     }
 }

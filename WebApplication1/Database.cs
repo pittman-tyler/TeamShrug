@@ -50,7 +50,7 @@ namespace WebApplication1
         }
 
         //When you search for a user, you get a string of course information, separted by new lines.
-        public string search_for_classes(string param)
+        public string search_for_courses(string param)
         {
             string listOfCourses = "";
             for (int i = 0; i < courseList.Count(); i++)
