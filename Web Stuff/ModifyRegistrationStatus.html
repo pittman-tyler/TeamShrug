@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="ModifyRegistrationStatusStyle.css">
+  </head>
+  <body>
+      <ul class="navbar">
+          <li><a href="AdminMain.html">Home</a></li>
+          <li><a href="AdminSearchCourse.html">Search for Course</a></li>
+          <li><a href="AdminSearchUser.html">Search for User</a></li>
+          <li><a href="ModifyRegistrationStatus.html">Modify Registration Status</a></li>
+          <li><a href="AdminCreateDeleteUser.html">Create/Delete User</a></li>
+          <li><a href="AdminCreateDeleteCourse.html">Create/Delete Course</a></li>
+          <li><a href="AdminViewsStudent.html">View Students</a></li>
+          <li><a href="Login.html">Log out</a></li>
+      </ul>
+
+      <div class="main">
+      <ul id = "courseDetails">
+        <!-- When you pass the course name from the previous page, replace "Course Name" with it.-->
+    		  <li><a>Registration Status</a>
+                    <button id ="registrationStatus" onclick="getRegistrationStatus()">STATUS: </button>
+                    <a id="status">Your status</a>
+               </li>
+   		</ul>
+    </form>
+
+     <script>
+          function getRegistrationStatus() {
+               var myStatus = "Not Implemeted";
+
+               // c# 
+
+               document.getElementById("status").innerHTML = myStatus;
+          }
+     </script>
+
+
+     </div>
+  </body>
+</html>

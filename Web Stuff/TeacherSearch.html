@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Search</title>
+        <link rel="stylesheet" href="TeacherSearchStyle.css">
+    </head>
+    <body>
+
+    <ul class = "navbar">
+    <li><a href = "TeacherMain.html">Home</a></li>
+    <li><a href = "TeacherScheduleView.html">View Schedule</a></li>
+    <li><a href = "Login.html">Log out</a></li>
+
+    </ul>
+    
+<div class="search">
+        <h1>Search </h1>
+            <div align="center">
+                <br />Student you would like to find.
+
+                <form id="myForm">
+                <input type="text" name="str">
+                <button input type="button" onClick="getField(this.form)">Search</button>
+            </div>
+        </div>
+</body>
+</html>
+<script type="text/javascript">
+     function getField(form) {
+          var str = form.str.value;
+          $.ajax({ type: 'GET', url: '/Controllers/TeacherSearchController', });
+          alert("You entered: " + str);
+     }
+</script>
