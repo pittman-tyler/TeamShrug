@@ -162,6 +162,7 @@
     <Content Include="Web Stuff\TeacherSearch.html" />
     <Content Include="Web Stuff\TeacherSearchStyle.css" />
     <Content Include="Web.config" />
+    <Content Include="_LayoutPage1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\Global.cs" />

@@ -1,10 +1,10 @@
 ﻿<!DOCTYPE html>
-<asp:ScriptManager id="ScriptManager2" runat="server" EnablePageMethods="true"/>
+
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="LoginStyle.css">
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
 </head>
 <body>
     <h1>Welcome!</h1>
@@ -26,7 +26,7 @@
          function getCredentials(form) {
               var username = form.usr.value;
               var password = form.pword.value;
-        
+
               if ((username === "student") && (password === "password")) {
                    location.assign("StudentMain.html");
               }
@@ -36,7 +36,7 @@
               if ((username === "teacher") && (password === "pswd")) {
                   location.assign("TeacherMain.html");
               }
-  
+             
        }
     </script>
     </script>

@@ -1,0 +1,6 @@
+C:\Users\Tyler\Documents\GitHub\TeamShrug\Console Version\TeamShrugTerminalApp\TeamShrugTerminalApp\bin\Debug\TeamShrugTerminalApp.exe.config
+C:\Users\Tyler\Documents\GitHub\TeamShrug\Console Version\TeamShrugTerminalApp\TeamShrugTerminalApp\bin\Debug\TeamShrugTerminalApp.exe
+C:\Users\Tyler\Documents\GitHub\TeamShrug\Console Version\TeamShrugTerminalApp\TeamShrugTerminalApp\bin\Debug\TeamShrugTerminalApp.pdb
+C:\Users\Tyler\Documents\GitHub\TeamShrug\Console Version\TeamShrugTerminalApp\TeamShrugTerminalApp\obj\Debug\TeamShrugTerminalApp.csprojResolveAssemblyReference.cache
+C:\Users\Tyler\Documents\GitHub\TeamShrug\Console Version\TeamShrugTerminalApp\TeamShrugTerminalApp\obj\Debug\TeamShrugTerminalApp.exe
+C:\Users\Tyler\Documents\GitHub\TeamShrug\Console Version\TeamShrugTerminalApp\TeamShrugTerminalApp\obj\Debug\TeamShrugTerminalApp.pdb
