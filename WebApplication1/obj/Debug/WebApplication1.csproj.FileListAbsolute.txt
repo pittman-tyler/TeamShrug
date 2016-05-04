@@ -55,3 +55,7 @@ C:\Users\Tyler\Documents\GitHub\TeamShrug\WebApplication1\bin\System.Web.WebPage
 C:\Users\Tyler\Documents\GitHub\TeamShrug\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
 C:\Users\Tyler\Documents\GitHub\TeamShrug\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\Tyler\Documents\GitHub\TeamShrug\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\Tyler\Documents\GitHub\TeamShrug\WebApplication1\bin\EntityFramework.dll
+C:\Users\Tyler\Documents\GitHub\TeamShrug\WebApplication1\bin\EntityFramework.SqlServer.dll
+C:\Users\Tyler\Documents\GitHub\TeamShrug\WebApplication1\bin\EntityFramework.xml
+C:\Users\Tyler\Documents\GitHub\TeamShrug\WebApplication1\bin\EntityFramework.SqlServer.xml

@@ -35,6 +35,14 @@ namespace WebApplication1
             currentSize = 0;
         }
 
+        public string toString()
+        {
+            string output = "CourseID: " + courseID + "\nCourse Name: " + courseName + "\nDescription: " + description + "\nTeacher: " + teacherName;
+            output += "\nCredit Hours: " + creditHours + "\nMax Size: " + maxSize + "\nCurrent Size: " + currentSize;
+
+                return output;
+        }
+
         public string get_course_id()
         {
             return courseID;

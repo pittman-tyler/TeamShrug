@@ -2,34 +2,36 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="StudentAddDropCourseStyle.css">
+    <link rel="stylesheet" type="text/css" href="AdminCreateDeleteCourseStyle.css">
 </head>
 <body>
     <ul class="navbar">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Search for Course</a></li>
-        <li><a href="#">Add/Drop Course</a></li>
-        <li><a href="#">View Transcript</a></li>
-        <li><a href="#">View Schedule</a></li>
-        <li><a href="#">Log out</a></li>
+        <li><a href="StudentMain.html">Home</a></li>
+        <li><a href="StudentSearch.html">Search for Course</a></li>
+        <li><a href="StudentAddDropCourse.html">Add/Drop Course</a></li>
+        <li><a href="StudentScheduleView.html">View Schedule</a></li>
+        <li><a href="Login.html">Log out</a></li>
     </ul>
     <div class="main">
         <h1>Add or Drop a Course</h1>
-        <ul class="tabs">
+        <ul class="tabs" style="list-style:none">
             <li>
+                <br />
                 <input type="radio" checked name="tabs" id="tab1">
                 <label for="tab1">Add a course</label>
-                <div id="tab-contentAdd" class="tab-content animated fadeIn">
+                <div id="tab-contentAdd" class="tab-content animated fadeIn"> <br />
                     <form id="myAddForm">
                         <input id="courseID" placeholder="Course ID" />
                         <button input type="button" onClick="getCourseIDAdd(this.form)">Add</button>
                     </form>
+                <br />
                 </div>
             </li>
             <li>
                 <input type="radio" name="tabs" id="tab2">
                 <label for="tab2">Drop a course</label>
                 <div id="tab-contentDrop" class="tab-content animated fadeIn">
+                    <br />
                     <form id="myDeleteForm">
                         <input name="courseID" placeholder="Course ID" />
                         <button input type="button" onClick="getCourseIDDelete(this.form)">Drop</button>

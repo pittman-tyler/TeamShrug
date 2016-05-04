@@ -23,16 +23,27 @@
                 <br />Please enter the course id of the course you would like to find.
 
                 <form id="myForm">
-                <input type="text" name="str">
+                <input type="text" name="str"></form>
                 <button input type="button" onClick="getField(this.form)">Search</button>
+
+                <ul id="courses"></ul>
             </div>
         </div>
 </body>
 </html>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script type="text/javascript">
-         function getField(form) {
-             var str = form.str.value;
-             $.ajax({type:'GET', url:'/Controllers/StudentSearchController', });
-                   alert("You entered: " + str);
-       }
+    
+    $form.ready(function () {
+        type: "GET";
+        url: "Controllers/CourseSearchController";
+        data: myForm;
+        success: successFunction();
+    });
+
+    function successFunc(data, status){
+        alert("123");
+    };
+
 </script>

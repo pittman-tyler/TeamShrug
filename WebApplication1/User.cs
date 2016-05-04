@@ -62,7 +62,7 @@ namespace WebApplication1
         //Student's variables
         protected bool registrationStatus { get; set; }
         public Transcript studentTranscript = new Transcript();
-
+        public Schedule schedule;
 
         public Student() { }
 
@@ -74,6 +74,7 @@ namespace WebApplication1
             this.password = passwordIn;
             this.registrationStatus = registrationstatusIn;
             this.studentTranscript = new Transcript();
+            this.schedule = new Schedule();
         }
 
         
@@ -135,27 +136,28 @@ namespace WebApplication1
     {
         public Administrator(string nameIn, string usernameIn, string passwordIn) : base(nameIn, usernameIn, passwordIn)
         {
+            //uses the default constructor for User
         }
 
         private void create_student(string nameIn, string usernameIn, string passwordIn, bool registrationstatusIn)
         {
-            
+            //Done in controllers        
         }
         private void create_teacher(string nameIn, string usernameIn, string passwordIn)
         {
-
+            //Done in controllers
         }
         private void create_admin(string nameIn, string usernameIn, string passwordIn)
         {
-
+            //Done in controllers
         }
         private void create_course(string courseIDin, string nameIn, string description, string teacherNameIn, int meetingInfoIn, int creditHours, int timeIn, int maxSize)
         {
-
+            //Done in controllers
         }
         private void delete_course(string courseID)
         {
-
+            //Done in controllers
         }
     }
 }

@@ -13,5 +13,12 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
+
+        public void updateGrade(int gradeIn, string teacherID, string studentID, string courseID)
+        {
+            Course a = WebApplication1.globals.Global.data.get_course(courseID);
+            Student b = WebApplication1.globals.Global.data.get_student(studentID);
+            WebApplication1.globals.Global.data.get_teacher(teacherID).assignGrade(a, b, gradeIn);
+        }
     }
 }

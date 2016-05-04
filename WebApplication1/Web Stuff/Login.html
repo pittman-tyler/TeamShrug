@@ -27,9 +27,15 @@
               var password = form.pword.value;
 
               if ((username == "student") && (password == "password")) {
-                   location.assign("AdminMain.html");
+                   location.assign("StudentMain.html");
               }
-              else {
+              if ((username == "admin") && (password == "1234")) {
+                  location.assign("AdminMain.html");
+              }
+              if ((username == "teacher") && (password == "pswd")) {
+                  location.assign("TeacherMain.html")
+              }
+             else {
                    alert("Login unsuccessful");
               }
        }

@@ -13,5 +13,15 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
+
+        public void deleteUser(string UserID)
+        {
+            WebApplication1.globals.Global.data.delete_user(UserID);
+        }
+
+        public void createUser(User a)
+        {
+            WebApplication1.globals.Global.data.add_user(a);
+        }
     }
 }
