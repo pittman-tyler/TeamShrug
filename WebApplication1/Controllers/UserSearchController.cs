@@ -14,14 +14,10 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        public string CourseSearch(string id)
+        public ActionResult UserSearch(string id)
         {
-            return WebApplication1.globals.Global.data.search_for_users(id);
-        }
-
-        public string UserSearch(string id)
-        {
-            return "<p>" + WebApplication1.globals.Global.data.search_for_users(id) + "</p>";
+            ViewBag.Message("<p>" + WebApplication1.globals.Global.data.search_for_users(id) + "</p>");
+            return View();
         }
     }
 }
