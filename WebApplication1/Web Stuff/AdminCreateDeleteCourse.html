@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="AdminCreateDeleteCourseStyle.css">
+  </head>
+  <body>
+      <ul class="navbar">
+          <li><a href="AdminMain.html">Home</a></li>
+          <li><a href="AdminSearchCourse.html">Search for Course</a></li>
+          <li><a href="AdminSearchUser.html">Search for User</a></li>
+          <li><a href="ModifyRegistrationStatus.html">Modify Registration Status</a></li>
+          <li><a href="AdminCreateDeleteUser.html">Create/Delete User</a></li>
+          <li><a href="AdminCreateDeleteCourse.html">Create/Delete Course</a></li>
+          <li><a href="AdminViewsStudent.html">View Students</a></li>
+          <li><a href="Login.html">Log out</a></li>
+      </ul>
+      <div class="main">
+          <br />
+      <h1>Create or Delete a Course</h1>
+          <br />
+            <ul class="tabs" style="list-style:none">
+                <input type="radio" checked name="tabs" id="tab1">
+                <label for="tab1">Create a course</label><li><br />
+                <div id="tab-contentAdd" class="tab-content animated fadeIn">
+                   <input type="text" placeholder="Course ID"/>
+                   <input type="text" placeholder="Course Name"/>
+                   <input type="text" placeholder="Description"/>
+                    <br /><br />
+                   <input type="text" placeholder="Teacher"/>
+                   <input type="text" placeholder="Credit hours"/>
+                   <input type="text" placeholder="Maximum size"/>
+                    <br /><br />
+      		     <button>Create</button>
+                    <br /><br />
+                </div>
+              </li>
+               
+              <li>
+                  <br />
+                <input type="radio" name="tabs" id="tab2">
+                <label for="tab2">Delete a course</label>
+                <div id="tab-contentDrop" class="tab-content animated fadeIn">
+                    <br />
+                   <input type="text" placeholder="Course ID"/>
+                   <button onClick ="Delete()">Delete</button>
+                </div>
+              </li>
+
+
+
+          </ul>
+
+
+           <script>
+               function Create() {
+                    return null
+               }
+                function Delete(){
+                     return null;
+                }
+          </script>
+  </body>
+</html>
