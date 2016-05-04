@@ -156,7 +156,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\CourseController.cs" />
+    <Compile Include="Controllers\CourseSearchController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ScheduleController.cs" />
+    <Compile Include="Controllers\TranscriptController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\UserSearchController.cs" />
     <Compile Include="Course.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="Global.asax.cs">
@@ -187,8 +193,14 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\CourseController\" />
+    <Folder Include="Views\CourseSearch\" />
+    <Folder Include="Views\Login\" />
+    <Folder Include="Views\Schedule\" />
     <Folder Include="Views\Search\" />
     <Folder Include="Views\StudentSearch\" />
+    <Folder Include="Views\Transcript\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -33,15 +33,8 @@
     function getField(form) {
         var $users = $('#users');
         var str = form.str.value;
-        $.ajax({
-            type: 'GET',
-            url: '/Controllers/StudentSearchController',
-            success: function (students) {
-                $.each(users, function (i, order) {
-                    $users.append('<li>name: ' + user.name + ', username' + )
-                })
-            }
-        });
+        $.get("Controllers/SearchController.cs", form){
+            ;
         alert("You entered: " + str);
        }
 </script>
