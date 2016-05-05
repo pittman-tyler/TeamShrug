@@ -55,5 +55,12 @@ namespace TeamShrugTerminalApp
         {
             return db.enrollmentSummary();
         }
+
+        internal static string update_grade(string selection, string selection3, string grade, Database db)
+        {
+            int gradeNum = Int32.Parse(grade);
+            db.get_student(selection3).get_student_transcript().update_transcript(db.get_course(selection), gradeNum);
+            return "Success!"
+        }
     }
 }

@@ -31,5 +31,10 @@ namespace TeamShrugTerminalApp
                 return "Success!";
             }
         }
+
+        internal static string view_students(string selection, Database db)
+        {
+            return db.get_course(selection).roster_view();
+        }
     }
 }

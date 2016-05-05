@@ -24,5 +24,11 @@ namespace TeamShrugTerminalApp
             db.delete_user(username);
             return "Success!";
         }
+
+        internal static string teacher_schedule(string userID, Database db)
+        {
+            Teacher temp = db.get_teacher(userID);
+            return temp.getSchedule().display_courses();
+        }
     }
 }

@@ -11,6 +11,7 @@ namespace TeamShrugTerminalApp
         static void Main(string[] args)
         {
             Database db = new Database();
+            string loggedInUser = "";
             while (true)
             {
                 Console.Clear();
@@ -18,15 +19,15 @@ namespace TeamShrugTerminalApp
                 string input;
                 while (typeUser < 0)
                 {
-                    Console.Write("Please Login\nUsername: ");
-                    string username = Console.ReadLine();
+                    Console.Write("Welcome to the University Registration System.\n\nPlease Login\nUsername: ");
+                    loggedInUser = Console.ReadLine();
                     Console.Write("Password: ");
                     string password = Console.ReadLine();
-                    typeUser = LoginController.login(db, username, password);
+                    typeUser = LoginController.login(db, loggedInUser, password);
 
-                    if (typeUser == -1)
+                    if (typeUser < 0)
                     {
-                        Console.WriteLine("Invalid username or password. Please try again.");
+                        Console.WriteLine("Invalid username or password. Please try again.\n\n[Five Second Timeout]");
                         System.Threading.Thread.Sleep(5000);
                         Console.Clear();
 
@@ -157,7 +158,55 @@ namespace TeamShrugTerminalApp
 
                 }
                 #endregion
+
+                #region Teacher View
+                if (typeUser == 2)
+                {
+                    do
+                    {
+                        Console.Clear();
+                        Console.Write("\nPlease Select an option below.\n1 Main \n2 Schedule View \n3 Logout\n\nOption: ");
+                        input = Console.ReadLine();
+                        switch (input)
+                        {
+                            case "1":
+                                Console.WriteLine("Press any key to continue.");
+                                Console.ReadKey();
+                                break;
+                            case "2":
+                                Console.WriteLine("Schedule View\n\nPlease select an option from the list.\n");
+                                Console.Write(UserController.teacher_schedule(loggedInUser, db));
+                                Console.WriteLine("Selection [courseID]: ");
+                                string selection = Console.ReadLine();
+                                Console.WriteLine("Options: \n1\tView Student List\n2\tMain Menu");
+                                string selection2 = Console.ReadLine();
+                                if(string.Compare(selection2, "1") == 0)
+                                {
+                                    Console.WriteLine("Select a student from the list below.");
+                                    Console.WriteLine(CourseController.view_students(selection, db) + "\nUsername: ");
+                                    string selection3 = Console.ReadLine();
+                                    Console.WriteLine("Input grade A = 4, B = 3, C = 2, D = 1, F = 0: ");
+                                    string grade = Console.ReadLine();
+                                    Console.WriteLine(StudentController.update_grade(selection, selection3, grade, db));
+                                }
+                                else { break; }
+                                Console.WriteLine("Press any key to continue.");
+                                Console.ReadKey();
+                                break;
+                            case "3":
+                                break;
+                            default:
+                                break;
+                        }
+                            
+
+
+                        } while (string.Compare(input, "3") != 0);
+                }
+                #endregion
             }
+
+
         }
     }
 }

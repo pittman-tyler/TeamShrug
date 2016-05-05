@@ -115,14 +115,21 @@ namespace TeamShrugTerminalApp
     //Speciliazation for the "Teacher" user
     public class Teacher : User
     {
+        Schedule teachSchedule;
         public Teacher(string nameIn, string usernameIn, string passwordIn) : base(nameIn, usernameIn, passwordIn)
         {
+            teachSchedule = new Schedule();
         }
 
         public void assignGrade(Course a_course, Student a_student, int gradeInput)
         {
             Transcript tempTranscript = a_student.get_student_transcript();
             tempTranscript.update_transcript(a_course, gradeInput);
+        }
+
+        internal Schedule getSchedule()
+        {
+            return teachSchedule;
         }
     }
 

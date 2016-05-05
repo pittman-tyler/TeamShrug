@@ -17,7 +17,7 @@ namespace TeamShrugTerminalApp
         protected int classTime { get; set; }
         protected int currentSize { get; set; }
         protected int maxSize { get; set; }
-        protected List<string> roster { get; set; }
+        protected List<Student> roster { get; set; }
 
         public Course() { }
 
@@ -43,6 +43,17 @@ namespace TeamShrugTerminalApp
                 return output;
         }
 
+        internal string roster_view()
+        {
+            string output = "";
+            for (int i = 0; i < roster.Count; i++)
+            {
+                output += "User ID: " + roster[i].get_username() + "\t Name: " + roster[i].get_name() + "\n";
+            }
+            if(string.Compare(output, "") == 0) { return "No students in this class."; }
+            return output;
+        }
+
         public string get_course_id()
         {
             return courseID;
@@ -57,7 +68,7 @@ namespace TeamShrugTerminalApp
             else
             {
                 string name = studentIN.get_name();
-                this.roster.Add(name);
+                this.roster.Add(studentIN);
                 this.currentSize++;
                 return 0;
             }
