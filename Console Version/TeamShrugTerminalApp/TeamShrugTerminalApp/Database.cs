@@ -9,29 +9,42 @@ namespace TeamShrugTerminalApp
     public class Database
     {
         //Fields to be used by the database
-        List<Student> listStudents;
-        List<Administrator> listAdmins;
-        List<Teacher> listTeachers;
-        List<Course> courseList;
+        public List<Student> listStudents;
+        public List<Administrator> listAdmins;
+        public List<Teacher> listTeachers;
+        public List<Course> courseList;
 
 
 
         //Populates a temporary database to be used throughout the program.
         public Database()
         {
+            listStudents = new List<Student>(0);
+            listAdmins = new List<Administrator>(0);
+            listTeachers = new List<Teacher>(0);
+            courseList = new List<Course>(0);
+
             Student a = new Student("Aubie", "AU0001", "WDE", true);
             Administrator b = new Administrator("Jay Gouge", "JG0001", "President");
+            Administrator g = new Administrator("admin", "admin", "password");
             Teacher c = new Teacher("Tony Teacher", "TT0001", "password");
+            Teacher h = new Teacher("Teacher", "teacher", "password");
+            Student i = new Student("student", "student", "password", true);
             Course d = new Course("COMP 3700", "Software Modeling and Design", "Something goes here", "Yilmaz", 2, 3, 1230, 45);
             Teacher e = new Teacher("Yilmaz", "yilmaz", "password");
             Course f = new Course("COMP 3500", "Operating Systems", "Let's learn OSes", "Tony Teacher", 1, 3, 0900, 45);
+
             listStudents.Add(a);
             listAdmins.Add(b);
             listTeachers.Add(c);
             listTeachers.Add(e);
             courseList.Add(d);
             courseList.Add(f);
+            listAdmins.Add(g);
+            listStudents.Add(i);
+            listTeachers.Add(h);
         }
+
         internal void delete_user(string userID)
         {
             for(int i = 0; i < listStudents.Count; i++)
@@ -56,6 +69,7 @@ namespace TeamShrugTerminalApp
                 }
             }
         }
+
         public Teacher get_teacher(string teacherID)
         {
             Teacher a = null;
@@ -93,10 +107,7 @@ namespace TeamShrugTerminalApp
                 }
 
             }
-            if (a == null)
-            {
-                throw new Exception("User not found");
-            }
+
             return a;
         }
 
@@ -111,10 +122,6 @@ namespace TeamShrugTerminalApp
                 }
 
 }
-            if (a == null)
-            {
-                throw new Exception("User not found");
-            }
             return a;
         }
 
@@ -203,20 +210,16 @@ namespace TeamShrugTerminalApp
                     throw new Exception("Username already exists");
                 }
             }
-            if (input.GetType() is Student){
+            if (input is Student){
                 listStudents.Add((Student)input);
             }
-            if(input.GetType() is Administrator)
+            if(input is Administrator)
             {
                 listAdmins.Add((Administrator)input);
             }
-            if(input.GetType() is Teacher)
+            if(input is Teacher)
             {
                 listTeachers.Add((Teacher)input);
-            }
-            else
-            {
-
             }
         }
     }

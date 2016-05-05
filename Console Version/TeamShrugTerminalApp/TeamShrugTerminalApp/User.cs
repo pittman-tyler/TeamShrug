@@ -96,11 +96,6 @@ namespace TeamShrugTerminalApp
             return this.studentTranscript;
         }
 
-        public bool registration_status()
-        {
-            return registrationStatus;
-        }
-
         new public string toString()
         {
             string output = "Name: ";

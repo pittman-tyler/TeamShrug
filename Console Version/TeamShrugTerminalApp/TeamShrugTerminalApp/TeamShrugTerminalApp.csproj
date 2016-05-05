@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="StudentController.cs" />
+    <Compile Include="SearchController.cs" />
+    <Compile Include="LoginController.cs" />
     <Compile Include="Course.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="Program.cs" />
