@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CourseController.cs" />
     <Compile Include="StudentController.cs" />
     <Compile Include="SearchController.cs" />
     <Compile Include="LoginController.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="Schedule.cs" />
     <Compile Include="Transcript.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="UserController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

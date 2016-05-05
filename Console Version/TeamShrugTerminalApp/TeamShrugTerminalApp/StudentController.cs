@@ -37,7 +37,7 @@ namespace TeamShrugTerminalApp
         {
             if (db.get_student(username) != null)
             {
-                return "User already exists. Please choose another user name."
+                return "User already exists. Please choose another user name.";
             }
             else
             {
@@ -49,6 +49,11 @@ namespace TeamShrugTerminalApp
                 db.add_user(temp);
             }
             return "Success!";
+        }
+
+        internal static string get_student_list(Database db)
+        {
+            return db.enrollmentSummary();
         }
     }
 }

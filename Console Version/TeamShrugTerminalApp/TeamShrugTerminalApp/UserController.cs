@@ -16,7 +16,13 @@ namespace TeamShrugTerminalApp
                 db.add_user(temp);
             }
                 return "Success!";
-            }
+            
+        }
+
+        internal static string delete_user(string username, Database db)
+        {
+            db.delete_user(username);
+            return "Success!";
         }
     }
 }

@@ -45,6 +45,28 @@ namespace TeamShrugTerminalApp
             listTeachers.Add(h);
         }
 
+        internal void delete_course(string courseID)
+        {
+            for (int i = 0; i < courseList.Count; i++)
+            {
+                if(string.Compare(courseList[i].get_course_id(), courseID, true) == 0)
+                {
+                    courseList.RemoveAt(i);
+                }
+            }
+        }
+
+        internal string enrollmentSummary()
+        {
+            string output = "";
+            for(int i = 0; i < listStudents.Count; i++)
+            {
+                output += listStudents[i].toString() + "\n\n";
+            }
+            return output + "\n Total Number Enrolled: " + listStudents.Count;
+
+        }
+
         internal void delete_user(string userID)
         {
             for(int i = 0; i < listStudents.Count; i++)
@@ -114,7 +136,7 @@ namespace TeamShrugTerminalApp
         public Administrator get_admin(string username)
         { 
         Administrator a = null;
-            for (int i = 0; i<listStudents.Count; i++)
+            for (int i = 0; i<listAdmins.Count; i++)
             {
                 if (String.Compare(listAdmins[i].get_username(), username, true) == 0)
                 {

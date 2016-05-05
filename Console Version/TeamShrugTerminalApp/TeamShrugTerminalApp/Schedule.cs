@@ -14,6 +14,7 @@ namespace TeamShrugTerminalApp
 
         public Schedule()
         {
+            courses = new List<Course>(0);
             num_hours = 0;
         }
 

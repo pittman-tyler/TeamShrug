@@ -99,8 +99,8 @@ namespace TeamShrugTerminalApp
         new public string toString()
         {
             string output = "Name: ";
-            output += this.name + "\tUsername: " + this.username;
-            output += "\tRegistration Status: ";
+            output += this.name + "\nUsername: " + this.username;
+            output += "\nRegistration Status: ";
             if (this.registrationStatus) {
                 output += "Active";
             }
