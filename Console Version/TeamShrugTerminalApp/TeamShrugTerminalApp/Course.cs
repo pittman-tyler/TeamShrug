@@ -11,7 +11,7 @@ namespace TeamShrugTerminalApp
         protected string courseID { get; set; }
         protected string courseName { get; set; }
         protected string description { get; set; }
-        protected string teacherName { get; set; }
+        protected string teacherID { get; set; }
         protected int meetingDays { get; set; }
         protected int creditHours { get; set; }
         protected int classTime { get; set; }
@@ -27,17 +27,18 @@ namespace TeamShrugTerminalApp
             courseID = courseIDin;
             courseName = nameIn;
             description = descriptionIn;
-            teacherName = teacherNameIn;
+            teacherID = teacherNameIn;
             meetingDays = meetingDaysIn;
             creditHours = creditHoursIn;
             classTime = timeIn;
             maxSize = maxSizeIn;
             currentSize = 0;
+            roster = new List<Student>(0);
         }
 
         public string toString()
         {
-            string output = "CourseID: " + courseID + "\nCourse Name: " + courseName + "\nDescription: " + description + "\nTeacher: " + teacherName;
+            string output = "CourseID: " + courseID + "\nCourse Name: " + courseName + "\nDescription: " + description + "\nTeacher: " + teacherID;
             output += "\nCredit Hours: " + creditHours + "\nMax Size: " + maxSize + "\nCurrent Size: " + currentSize;
 
                 return output;
@@ -87,7 +88,7 @@ namespace TeamShrugTerminalApp
 
         public string get_teacher_name()
         {
-            return this.teacherName;
+            return this.teacherID;
         }
 
         public int get_meeting_info()
@@ -115,5 +116,20 @@ namespace TeamShrugTerminalApp
             return this.currentSize;
         }
 
+        internal int remove_student(string userID)
+        {
+            bool studentExists = false;
+            for (int i = 0; i < roster.Count && studentExists == false; i++)
+            {
+                if(string.Compare(roster[i].get_username(), userID, true) == 0)
+                {
+                    roster.RemoveAt(i);
+                    currentSize--;
+                    studentExists = true;
+                }
+            }
+            if(studentExists) { return 1; }
+            else { return -1; }
+        }
     }
 }

@@ -22,7 +22,7 @@ namespace TeamShrugTerminalApp
             listStudents = new List<Student>(0);
             listAdmins = new List<Administrator>(0);
             listTeachers = new List<Teacher>(0);
-            courseList = new List<Course>(0);
+            courseList = new List<Course>(5);
 
             Student a = new Student("Aubie", "AU0001", "WDE", true);
             Administrator b = new Administrator("Jay Gouge", "JG0001", "President");
@@ -30,9 +30,15 @@ namespace TeamShrugTerminalApp
             Teacher c = new Teacher("Tony Teacher", "TT0001", "password");
             Teacher h = new Teacher("Teacher", "teacher", "password");
             Student i = new Student("student", "student", "password", true);
-            Course d = new Course("COMP 3700", "Software Modeling and Design", "Something goes here", "Yilmaz", 2, 3, 1230, 45);
+            Course d = new Course("COMP3700", "Software Modeling and Design", "Something goes here", "yilmaz", 2, 3, 1230, 45);
             Teacher e = new Teacher("Yilmaz", "yilmaz", "password");
-            Course f = new Course("COMP 3500", "Operating Systems", "Let's learn OSes", "Tony Teacher", 1, 3, 0900, 45);
+            Course f = new Course("COMP3500", "Operating Systems", "Let's learn OSes", "TT0001", 1, 3, 0900, 45);
+
+            c.getSchedule().add_course(f);
+            e.getSchedule().add_course(d);
+
+            i.get_schedule().add_course(d);
+            d.add_student(i);
 
             listStudents.Add(a);
             listAdmins.Add(b);

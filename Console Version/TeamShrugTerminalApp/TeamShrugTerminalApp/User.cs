@@ -110,6 +110,11 @@ namespace TeamShrugTerminalApp
             }
             return output;
         }
+
+        internal Schedule get_schedule()
+        {
+            return schedule;
+        }
     }
 
     //Speciliazation for the "Teacher" user

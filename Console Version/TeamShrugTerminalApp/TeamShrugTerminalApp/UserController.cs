@@ -27,8 +27,20 @@ namespace TeamShrugTerminalApp
 
         internal static string schedule_view(string userID, Database db)
         {
-            Teacher temp = db.get_teacher(userID);
-            return temp.getSchedule().display_courses();
+            if (db.get_teacher(userID) != null){
+                Teacher temp = db.get_teacher(userID);
+                return temp.getSchedule().display_courses();
+
+            }
+            else if (db.get_student(userID) != null) {
+                Student temp = db.get_student(userID);
+                return temp.get_schedule().display_courses();
+            }
+            else
+            {
+                return "User does not exist.";
+            }
+            
         }
     }
 }

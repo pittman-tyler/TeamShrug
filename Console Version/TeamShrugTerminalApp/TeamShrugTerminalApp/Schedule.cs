@@ -10,20 +10,20 @@ namespace TeamShrugTerminalApp
     {
         int MAX_HOURS = 18;
         int num_hours;
-        List<Course> courses;
+        List<Course> courseList;
 
         public Schedule()
         {
-            courses = new List<Course>(0);
+            courseList = new List<Course>(0);
             num_hours = 0;
         }
 
         public string display_courses()
         {
             string output = "";
-            for (int element = 0; courses.Count > element; element++)
+            for (int element = 0; this.courseList.Count > element; element++)
             {
-                output += courses[element].ToString() + "\n";
+                output += this.courseList[element].ToString() + "\n";
             }
             return output;
         }
@@ -37,7 +37,7 @@ namespace TeamShrugTerminalApp
         {
             if(a.get_credit_hours() + num_hours <= MAX_HOURS)
             {
-                courses.Add(a);
+                this.courseList.Add(a);
                 num_hours += a.get_credit_hours();
                 return 0;
             }
@@ -49,12 +49,12 @@ namespace TeamShrugTerminalApp
 
         public void drop_course(Course a)
         {
-            for (int element = 0; element < courses.Count; element++)
+            for (int element = 0; element < courseList.Count; element++)
             {
-                if (courses[element].get_course_id() == a.get_course_id())
+                if (courseList[element].get_course_id() == a.get_course_id())
                     {
-                    num_hours -= courses[element].get_credit_hours();
-                    courses.RemoveAt(element);
+                    num_hours -= this.courseList[element].get_credit_hours();
+                    this.courseList.RemoveAt(element);
                     }
             }
         }
