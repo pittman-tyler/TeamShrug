@@ -60,7 +60,12 @@ namespace TeamShrugTerminalApp
         {
             int gradeNum = Int32.Parse(grade);
             db.get_student(selection3).get_student_transcript().update_transcript(db.get_course(selection), gradeNum);
-            return "Success!"
+            return "Success!";
+        }
+
+        internal static string view_transcript(Database db, string loggedInUser)
+        {
+            return db.get_student(loggedInUser).get_student_transcript().toString();
         }
     }
 }

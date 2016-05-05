@@ -42,6 +42,7 @@ namespace TeamShrugTerminalApp
                         Console.Clear();
                         Console.Write("\nPlease Select an option below.\n1 Main \n2 Search For Course \n3 Search For User \n4 Modify Registration Status \n5 Create or Delete User \n6 Create or Delete a Course \n7 View Enrollment Summary \n8 Logout\n\nOption: ");
                         input = Console.ReadLine();
+                        Console.Clear();
                         switch (input)
                         {
                             case "1": //Main
@@ -74,7 +75,7 @@ namespace TeamShrugTerminalApp
                                 string choice = Console.ReadLine();
                                 string username;
                                 string password;
-                                if(String.Compare(choice, "1") == 0)
+                                if (String.Compare(choice, "1") == 0)
                                 {
                                     Console.Write("What kind of user is this? Enter 1 for Student, 2 for Administrator, or 3 for Teacher: ");
                                     string typeOfUser = Console.ReadLine();
@@ -90,7 +91,7 @@ namespace TeamShrugTerminalApp
                                         string registrationStatus = Console.ReadLine();
                                         Console.WriteLine(StudentController.create_student(personName, username, password, registrationStatus, db));
                                     }
-                                    else if (String.Compare(typeOfUser, "2") == 0){
+                                    else if (String.Compare(typeOfUser, "2") == 0) {
                                         Console.WriteLine(UserController.create_administrator(personName, username, password, db));
                                     }
                                 }
@@ -107,7 +108,7 @@ namespace TeamShrugTerminalApp
                             case "6": //Create Delete Course
                                 Console.Write("Create Or Delete Course.\n\n\tEnter 1 to create a course or 2 to delete a course.");
                                 choice = Console.ReadLine();
-                                if(string.Compare(choice, "1") == 0)
+                                if (string.Compare(choice, "1") == 0)
                                 {
                                     Console.Write("Course Name: ");
                                     string courseName = Console.ReadLine();
@@ -129,7 +130,7 @@ namespace TeamShrugTerminalApp
                                     string maxSize = Console.ReadLine();
                                     Console.WriteLine(CourseController.addCourse(courseName, courseDescription, courseHours, courseID, teacherName, meetingDays, creditHours, classTime, maxSize, db));
                                 }
-                                else if(string.Compare(choice, "2") == 0)
+                                else if (string.Compare(choice, "2") == 0)
                                 {
                                     Console.Write("Enter the Course ID that you would like deleted: ");
                                     string courseID = Console.ReadLine();
@@ -159,54 +160,101 @@ namespace TeamShrugTerminalApp
                 }
                 #endregion
 
-                #region Teacher View
+                #region Student View
                 if (typeUser == 2)
                 {
                     do
                     {
                         Console.Clear();
-                        Console.Write("\nPlease Select an option below.\n1 Main \n2 Schedule View \n3 Logout\n\nOption: ");
+                        Console.Write("\nPlease Select an option below.\n1 Main \n2 Search Courses \n3 Add or Drop Course \n4 Transcript View \n5 Schedule View \n6 Logout\n\nOption: ");
                         input = Console.ReadLine();
+                        Console.Clear();
                         switch (input)
                         {
                             case "1":
-                                Console.WriteLine("Press any key to continue.");
-                                Console.ReadKey();
+
                                 break;
                             case "2":
-                                Console.WriteLine("Schedule View\n\nPlease select an option from the list.\n");
-                                Console.Write(UserController.teacher_schedule(loggedInUser, db));
-                                Console.WriteLine("Selection [courseID]: ");
-                                string selection = Console.ReadLine();
-                                Console.WriteLine("Options: \n1\tView Student List\n2\tMain Menu");
-                                string selection2 = Console.ReadLine();
-                                if(string.Compare(selection2, "1") == 0)
-                                {
-                                    Console.WriteLine("Select a student from the list below.");
-                                    Console.WriteLine(CourseController.view_students(selection, db) + "\nUsername: ");
-                                    string selection3 = Console.ReadLine();
-                                    Console.WriteLine("Input grade A = 4, B = 3, C = 2, D = 1, F = 0: ");
-                                    string grade = Console.ReadLine();
-                                    Console.WriteLine(StudentController.update_grade(selection, selection3, grade, db));
-                                }
-                                else { break; }
+                                Console.WriteLine("Course Search");
+                                Console.Write("Enter the Course ID you would like to search for:");
+                                string courseID = Console.ReadLine();
+                                Console.WriteLine(SearchController.CourseSearch(courseID, db));
                                 Console.WriteLine("Press any key to continue.");
                                 Console.ReadKey();
                                 break;
-                            case "3":
+                            case "3": //ADD OR DROP COURSE
+                                Console.WriteLine("Add or Drop a Course View");
+                                Console.WriteLine("Press any key to continue.");
+                                Console.ReadKey();
+                                break;
+                            case "4":
+                                Console.WriteLine("Transcript View");
+                                Console.WriteLine(StudentController.view_transcript(db, loggedInUser));
+                                Console.WriteLine("Press any key to continue.");
+                                Console.ReadKey();
+                                break;
+                            case "5":
+                                Console.WriteLine("Schedule View");
+                                Console.WriteLine(UserController.schedule_view(loggedInUser, db));
+                                Console.WriteLine("Press any key to continue.");
+                                Console.ReadKey();
+                                break;
+                            case "6":
                                 break;
                             default:
                                 break;
                         }
-                            
+                    } while (string.Compare(input, "6") != 0);
+                    #endregion
+
+                    #region Teacher View
+                    if (typeUser == 3)
+                    {
+                        do
+                        {
+                            Console.Clear();
+                            Console.Write("\nPlease Select an option below.\n1 Main \n2 Schedule View \n3 Logout\n\nOption: ");
+                            input = Console.ReadLine();
+                            Console.Clear();
+                            switch (input)
+                            {
+                                case "1":
+                                    break;
+                                case "2":
+                                    Console.WriteLine("Schedule View\n\nPlease select a course from the list.\n");
+                                    Console.Write(UserController.schedule_view(loggedInUser, db));
+                                    Console.Write("Selection [courseID]: ");
+                                    string selection = Console.ReadLine();
+                                    Console.WriteLine("Options: \n1\tView Student List\n2\tMain Menu");
+                                    string selection2 = Console.ReadLine();
+                                    if (string.Compare(selection2, "1") == 0)
+                                    {
+                                        Console.WriteLine("Select a student from the list below.");
+                                        Console.WriteLine(CourseController.view_students(selection, db) + "\nUsername: ");
+                                        string selection3 = Console.ReadLine();
+                                        Console.WriteLine("Input grade A = 4, B = 3, C = 2, D = 1, F = 0: ");
+                                        string grade = Console.ReadLine();
+                                        Console.WriteLine(StudentController.update_grade(selection, selection3, grade, db));
+                                    }
+                                    else { break; }
+                                    Console.WriteLine("Press any key to continue.");
+                                    Console.ReadKey();
+                                    break;
+                                case "3":
+                                    break;
+                                default:
+                                    break;
+                            }
+
 
 
                         } while (string.Compare(input, "3") != 0);
+                    }
+                    #endregion
                 }
-                #endregion
+
+
             }
-
-
         }
     }
 }

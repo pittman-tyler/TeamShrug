@@ -71,5 +71,17 @@ namespace TeamShrugTerminalApp
             this.calculate_GPA();
             return this.gpa;
         }
+
+        internal string toString()
+        {
+            if(completedHours == 0) { return "There have been no courses completed"; }
+            string output = "";
+            for(int i = 0; i < listOfCourses.Count; i++)
+            {
+                output += "\nCredit Hours: " + listOfCourses[i].courseHours + "\nCourse ID: " + listOfCourses[i].courseID + "\nCourse Name: " + listOfCourses[i].courseName + "\nGrade: " + listOfCourses[i].grade + "\n";
+            }
+            output += "\n Overall GPA: " + this.getGPA();
+            return output;
+        }
     }
 }

@@ -25,7 +25,7 @@ namespace TeamShrugTerminalApp
             return "Success!";
         }
 
-        internal static string teacher_schedule(string userID, Database db)
+        internal static string schedule_view(string userID, Database db)
         {
             Teacher temp = db.get_teacher(userID);
             return temp.getSchedule().display_courses();
